@@ -25,7 +25,7 @@ int getTossNumber() {
     int tossNumber;
     cout << "Enter toss number: ";
     cin >> tossNumber;
-    return tossNumber;
+    return (tossNumber - 1);
 }
 
 int main()
@@ -39,12 +39,16 @@ int main()
     cout << "Tossing coin " << tosses << " times..." << endl;
     while (i < tosses) {
         toss[i] = rand() % 2;
-        if (toss[i]) {
-            heads++;
-        } else {
-            tails++;
-        }
         i++;
+    }
+    int j = 0;
+    while (j < tosses){
+    if (toss[j]) {
+        heads++;
+    } else {
+        tails++;
+    }
+    j++;
     }
     cout << "Heads: " << heads << endl;
     cout << "Tails: " << tails << endl;
